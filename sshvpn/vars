@@ -1,0 +1,17 @@
+
+
+EXTERNAL_IP=<Your external ip>  # for example 104.128.46.222
+EXTERNAL_IF=<external host's interface> # for example: venet0
+SSH_PORT=<Your ssh port>  # for example 2222
+
+TUN_INDEX=2
+TUN_NAME=tun$TUN_INDEX
+TUN_LOCAL_IP=10.10.11.1
+TUN_PEER_IP=10.10.11.2
+TUN_NET=10.10.11.0/24
+
+
+INTERNAL_GW=172.17.0.1
+INTERNAL_IF=eth0
+INTERNAL_NET=172.17.0.0/16
+
