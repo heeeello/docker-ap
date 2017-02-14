@@ -6,8 +6,9 @@
 FROM ubuntu:14.04
 MAINTAINER fgg89
 
+ADD sources.list /etc/apt/sources.list
 # Update the repos
-RUN apt-get update && apt-get upgrade -y
+RUN   sed -i /deb-src/d /etc/apt/sources.list  && apt-get update && apt-get upgrade -y
 
 RUN apt-get install -y hostapd dnsmasq 
 RUN echo "#!/bin/bash\n### START dnsmasq\nservice dnsmasq start > /dev/null 2>&1\n### START hostapd\nservice hostapd start > /dev/null 2>&1" > /usr/bin/start_ap
